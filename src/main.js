@@ -6,6 +6,7 @@ import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import firebaseConfig from "@/firebase";
 import firebase from "firebase";
+import vuetify from './plugins/vuetify';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -21,7 +22,8 @@ firebase.auth().onAuthStateChanged(() => {
       router,
       store,
       Vuetify,
-      render: (h) => h(App),
+      vuetify,
+      render: (h) => h(App)
     }).$mount("#app");
   }
 });

@@ -1,31 +1,25 @@
 <template>
   <div class="home">
-    <v-card id="navbar" color="grey lighten-4" flat height="200px" tile>
-      <v-toolbar extended extension-height="100">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-        <v-toolbar-title>hola</v-toolbar-title>
-
-        <v-spacer></v-spacer>
-        <router-link to="/">Home</router-link> |
-
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-        <router-link to="/about">About</router-link>
-
-        <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
-      </v-toolbar>
-    </v-card>
-    <v-btn depressed small>Normal</v-btn>
-
-    <router-view />
+    <div id="img" class="text-center">
+      <h1 class="home_titulo">
+        Temporada de <br />
+        Plantas de Interior
+      </h1>
+      <v-divider
+        class="mx-auto mb-8"
+        color="white"
+        style="max-width:200px"
+      ></v-divider>
+      <h2 class="home_parrafo">
+        Para este invierno, trabajamos en una nueva sección sobre el cuidado de
+        sus plantas de interior, con muchos datos que les servirán para que
+        estén radiantes y sanas esta próxima primavera. Revisa el artículo
+        <v-btn small class="home_link" to="/about"><i> aquí.</i></v-btn>
+      </h2>
+      <v-btn class="my-10 text-center" large outlined rounded color="white"
+        >Registra tu planta</v-btn
+      >
+    </div>
   </div>
 </template>
 
@@ -43,8 +37,32 @@ export default {
 </script>
 
 <style>
-.home {
+.home_titulo {
+  font-family: "PT Serif", serif;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 90px;
+  color: white;
+  margin: auto;
+  padding: 150px 0 20px 0;
+}
+.home_parrafo {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  max-width: 70%;
+  margin: auto;
+}
+.home_link {
+  font-weight: 700;
+  color: white;
+}
+#img {
   background-image: url("../assets/plantas.png");
   background-size: cover;
+  min-width: 100%;
+  min-height: 670px;
 }
 </style>
