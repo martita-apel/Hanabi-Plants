@@ -28,22 +28,134 @@
       </p>
       <v-divider class="div my-6 mx-auto"></v-divider>
 
-      <v-row cols="12">
-        <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
-          <v-card-title class="overline text-center mb-4" justify="center"
-            >1</v-card-title
-          >
+      <v-row cols="12" class="ma-4">
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class="pl-1 mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">1</v-text>
+            </v-btn>
 
-          <v-card-text class="headline font-weight-bold">
-            "Turns out semicolon-less style is easier and safer in TS because
-            most gotcha edge cases are type invalid as well."
-          </v-card-text>
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
 
-          <v-card-actions>
-            <v-icon large left>mdi-twitter</v-icon>
-            <span class="title font-weight-light">Twitter</span>
-          </v-card-actions>
-        </v-card>
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >guiaverde</v-btn
+            >
+          </v-card>
+        </v-col>
+
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">2</v-text>
+            </v-btn>
+
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
+
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >camelia</v-btn
+            >
+          </v-card>
+        </v-col>
+
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">3</v-text>
+            </v-btn>
+
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
+
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >plantme</v-btn
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <v-row cols="12" class="ma-4">
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class="pl-1 mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">4</v-text>
+            </v-btn>
+
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
+
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >garden</v-btn
+            >
+          </v-card>
+        </v-col>
+
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">5</v-text>
+            </v-btn>
+
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
+
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >ecoplants</v-btn
+            >
+          </v-card>
+        </v-col>
+
+        <v-col sm="4">
+          <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
+            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
+              <v-text class="card_title overline">6</v-text>
+            </v-btn>
+
+            <v-card-text class="headline font-weight-bold">
+              "Turns out semicolon-less style is easier and safer in TS because
+              most gotcha edge cases are type invalid as well."
+            </v-card-text>
+
+            <v-btn
+              class="card_boton text--secondary mb-5 pa-2"
+              x-small
+              color="white"
+              light
+              >monrovia</v-btn
+            >
+          </v-card>
+        </v-col>
       </v-row>
     </div>
   </div>
@@ -78,5 +190,13 @@ p {
 }
 .div {
   max-width: 300px;
+}
+
+.card_title {
+  font-size: 20px !important;
+  text-align: center;
+}
+.card_boton {
+  font-family: "Roboto";
 }
 </style>
