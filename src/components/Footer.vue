@@ -8,8 +8,7 @@
       </v-card-text>
 
       <v-card-text class="white--text mx-auto pt-0" style="max-width:70%">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+        Ayúdanos a crear el mejor buscador de plantas del mundo. A luctus
         accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
         sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
         lacinia malesuada.

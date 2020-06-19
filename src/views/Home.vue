@@ -16,22 +16,41 @@
         estén radiantes y sanas esta próxima primavera. Revisa el artículo
         <v-btn small class="home_link" to="/about"><i> aquí.</i></v-btn>
       </h2>
-      <v-btn class="my-10 text-center" large outlined rounded color="white"
+      <!-- <v-btn
+        class="my-10 text-center"
+        large
+        outlined
+        rounded
+        color="white"
+        @click="agregarPlanta"
         >Registra tu planta</v-btn
-      >
+      > -->
+      <Register-modal />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-/* import HelloWorld from "@/components/HelloWorld.vue";
- */
+import RegisterModal from "@/components/RegisterModal.vue";
+
 export default {
   name: "Home",
   components: {
-    /*     HelloWorld,
-     */
+    RegisterModal,
+  },
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {
+    agregarPlanta() {
+      /*  if (login) {
+        this.$router.push("/about");
+      } else {
+        this.$router.push("/login");
+      } */
+    },
   },
 };
 </script>
