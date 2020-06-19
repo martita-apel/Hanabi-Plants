@@ -65,10 +65,10 @@ export default {
         .signInWithEmailAndPassword(this.usuario.email, this.usuario.password)
         .then((user) => {
           console.log(user);
-          alert("Te has registrado con éxito!");
           let usuario = this.usuario.email;
           this.updateUser(usuario);
           this.$router.push("/");
+          alert("Te has registrado con éxito!");
         })
         .catch(() => {
           this.updateUser(null);

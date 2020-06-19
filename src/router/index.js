@@ -27,7 +27,7 @@ const router = new VueRouter({
     },
     {
       path: "/register",
-      name: "Register",
+      name: "register",
       component: RegisterModal,
       meta: {
         login: true,
@@ -63,9 +63,7 @@ router.beforeEach((to, from, next) => {
   let authRequired = to.matched.some((route) => route.meta.login);
   if (!user && authRequired) {
     next("/login");
-  } /* else if (user && !authRequired) {
-    next("/");
-  } */ else {
+  } else {
     next();
   }
 });

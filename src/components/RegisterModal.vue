@@ -171,7 +171,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([]),
+    ...mapState(["currentUser"]),
   },
   methods: {
     ...mapActions([]),

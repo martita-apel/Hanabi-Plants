@@ -17,14 +17,26 @@
         <v-btn small class="home_link" to="/article/post"><i> aquí.</i></v-btn>
       </h2>
 
-      <Register-modal />
+      <Register-modal v-if="currentUser" />
+      <v-btn
+        v-else
+        class="my-10 text-center"
+        large
+        outlined
+        rounded
+        v-bind="attrs"
+        v-on="on"
+        color="white"
+        @click="noRegister"
+        >Registra tu planta</v-btn
+      >
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import RegisterModal from "@/components/RegisterModal.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -34,14 +46,12 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    ...mapState(["currentUser"]),
+  },
   methods: {
-    agregarPlanta() {
-      /*  if (login) {
-        this.$router.push("/about");
-      } else {
-        this.$router.push("/login");
-      } */
+    noRegister() {
+      this.$router.push("/login");
     },
   },
 };
