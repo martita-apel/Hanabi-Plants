@@ -14,17 +14,9 @@
         Para este invierno, trabajamos en una nueva sección sobre el cuidado de
         sus plantas de interior, con muchos datos que les servirán para que
         estén radiantes y sanas esta próxima primavera. Revisa el artículo
-        <v-btn small class="home_link" to="/about"><i> aquí.</i></v-btn>
+        <v-btn small class="home_link" to="/article/post"><i> aquí.</i></v-btn>
       </h2>
-      <!-- <v-btn
-        class="my-10 text-center"
-        large
-        outlined
-        rounded
-        color="white"
-        @click="agregarPlanta"
-        >Registra tu planta</v-btn
-      > -->
+
       <Register-modal />
     </div>
   </div>

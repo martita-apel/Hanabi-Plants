@@ -16,7 +16,7 @@
           >
         </template>
 
-        <v-card>
+        <v-card class="rounded-xl">
           <v-card-title class="d-block">
             <h6 id="header" class="text-center my-3">
               INVENTARIO
@@ -26,10 +26,12 @@
             </h1>
           </v-card-title>
 
-          <v-card-text class="py-0">
-            <v-container>
+          <v-divider class="my-2 mx-10"></v-divider>
+
+          <v-card-text class="pb-0">
+            <v-container class="pb-0">
               <v-row>
-                <v-col cols="12" sm="6">
+                <v-col cols="12" sm="6" class="py-0">
                   <v-text-field
                     label="Nombre de tu planta*"
                     outlined
@@ -38,70 +40,69 @@
                   ></v-text-field>
                 </v-col>
 
-                <v-col cols="12" sm="6">
+                <v-col cols="12" sm="6" class="py-0">
                   <v-text-field
-                    class="pb-0"
                     type="text"
                     label="Categoría*"
                     outlined
                     dense
+                    required
                     hint="Según su especie, tamaño y/o morfología."
                   ></v-text-field>
                 </v-col>
 
-                <v-col cols="12">
+                <v-col cols="12" class="py-0">
                   <v-text-field
                     label="Imagen*"
-                    hint="Ingresa la URL."
+                    hint="Ingresa la URL"
                     outlined
                     dense
                     required
                   ></v-text-field>
                 </v-col>
 
-                <v-col cols="12">
-                  <v-text-field
-                    label="Password*"
-                    type="password"
-                    required
-                  ></v-text-field>
+                <v-col cols="12" sm="6" class="py-0">
+                  <v-textarea
+                    class="pb-0"
+                    type="text"
+                    label="Descripción"
+                    rows="5"
+                    outlined
+                    dense
+                  ></v-textarea>
                 </v-col>
-                <v-col cols="12" sm="6">
-                  <v-select
-                    :items="['0-17', '18-29', '30-54', '54+']"
-                    label="Age*"
-                    required
-                  ></v-select>
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-autocomplete
-                    :items="[
-                      'Skiing',
-                      'Ice hockey',
-                      'Soccer',
-                      'Basketball',
-                      'Hockey',
-                      'Reading',
-                      'Writing',
-                      'Coding',
-                      'Basejump',
-                    ]"
-                    label="Interests"
-                    multiple
-                  ></v-autocomplete>
-                </v-col>
+
+                <div>
+                  <v-col cols="12" sm="10" class="py-0">
+                    <v-text-field
+                      prepend-inner-icon="mdi-currency-usd"
+                      label="Precio"
+                      type="number"
+                      outlined
+                      dense
+                    ></v-text-field>
+                  </v-col>
+
+                  <v-col cols="12" sm="8" class="py-0">
+                    <v-text-field
+                      label="Stock"
+                      type="number"
+                      outlined
+                      dense
+                    ></v-text-field>
+                  </v-col>
+                  <small class="py-0 my-0 ml-4">*Campos requeridos</small>
+                </div>
               </v-row>
             </v-container>
-            <small>*indicates required field</small>
           </v-card-text>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn color="blue darken-1" text @click="dialog = false"
-              >Close</v-btn
+          <v-card-actions class="pb-8 ml-7">
+            <v-btn dark color="green darken-1" @click="agregarPlanta"
+              >Registrar planta</v-btn
             >
-            <v-btn color="blue darken-1" text @click="dialog = false"
-              >Save</v-btn
+            <v-btn outlined color="green darken-1" @click="dialog = false"
+              >Cerrar</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -173,7 +174,7 @@ export default {
     ...mapState([]),
   },
   methods: {
-    ...mapActions(["showModal", "hideModal"]),
+    ...mapActions([]),
     agregarPlanta() {
       this.showModal();
     },
