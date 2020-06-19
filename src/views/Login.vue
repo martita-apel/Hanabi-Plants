@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import firebase from "firebase";
 
 export default {
@@ -56,6 +57,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["updateUser"]),
     login(e) {
       e.preventDefault();
       firebase
@@ -63,11 +65,14 @@ export default {
         .signInWithEmailAndPassword(this.usuario.email, this.usuario.password)
         .then((user) => {
           console.log(user);
-          this.$router.push("/");
           alert("Te has registrado con éxito!");
+          let usuario = this.usuario.email;
+          this.updateUser(usuario);
+          this.$router.push("/");
         })
         .catch(() => {
-          console.log("Usuario no autenticado");
+          this.updateUser(null);
+          alert("¡Error al iniciar sesión!");
         });
     },
   },

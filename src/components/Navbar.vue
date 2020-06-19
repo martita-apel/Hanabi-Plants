@@ -11,7 +11,9 @@
         <v-btn text dark class="mr-2" to="/">Inicio</v-btn>
         <v-btn text dark class="mr-2" to="/inventory">Inventario</v-btn>
         <v-btn text dark class="mr-2" to="/article/1">Blog</v-btn>
-        <v-btn text dark class="mr-2" to="/login">Regístrate</v-btn>
+        <v-btn text dark class="mr-2" to="/login" @click="logout">{{
+          currentUser ? "Cerrar Sesión" : "Regístrate"
+        }}</v-btn>
         <v-btn icon dark>
           <v-icon>mdi-heart</v-icon>
         </v-btn>
@@ -34,7 +36,7 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item @click="menu" id="block" class="text-center my-2">
+          <v-list-item id="block" class="text-center my-2">
             <v-list-item-title>
               <v-btn text dark class="mr-2 my-1" to="/">Inicio</v-btn>
             </v-list-item-title>
@@ -50,7 +52,9 @@
             </v-list-item-title>
 
             <v-list-item-title>
-              <v-btn text dark class="mr-2" to="/login">Regístrate</v-btn>
+              <v-btn text dark class="mr-2" to="/login">{{
+                currentUser ? "Cerrar Sesión" : "Regístrate"
+              }}</v-btn>
             </v-list-item-title>
 
             <v-list-item-title>
@@ -72,11 +76,27 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+import firebase from "firebase";
+
 export default {
   name: "Navbar",
   components: {},
   data: () => ({}),
-  methods: {},
+  methods: {
+    ...mapActions(["updateUser"]),
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.updateUser(null);
+        });
+    },
+  },
+  computed: {
+    ...mapState(["currentUser"]),
+  },
 };
 </script>
 

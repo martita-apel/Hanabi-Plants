@@ -7,8 +7,8 @@ import Inventory from "../views/Inventory.vue";
 const Article = () => import("../views/Article");
 const PostArticle = () => import("../components/PostArticle");
 
-/* import firebase from "firebase";
- */
+import firebase from "firebase";
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -58,16 +58,16 @@ const router = new VueRouter({
   ],
 });
 
-/* router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   let user = firebase.auth().currentUser;
   let authRequired = to.matched.some((route) => route.meta.login);
   if (!user && authRequired) {
     next("/login");
-  } else if (user && !authRequired) {
+  } /* else if (user && !authRequired) {
     next("/");
-  } else {
+  } */ else {
     next();
   }
-}); */
+});
 
 export default router;

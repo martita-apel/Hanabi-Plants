@@ -175,9 +175,7 @@ export default {
   },
   methods: {
     ...mapActions([]),
-    agregarPlanta() {
-      this.showModal();
-    },
+    agregarPlanta() {},
   },
   /*methods: {
     ...mapMutations(["SET_EMPTY_TOY"]),

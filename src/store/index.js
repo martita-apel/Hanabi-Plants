@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    currentUser: null,
     plants: [],
     plant: {
       id: null,
@@ -20,19 +21,26 @@ export default new Vuex.Store({
     showModal: false,
   },
   mutations: {
-    SHOW_MODAL(state) {
-      state.showModal = false;
+    UPDATE_CURR_USER(state, user) {
+      state.currentUser = user;
     },
     HIDE_MODAL(state) {
       state.showModal = false;
     },
   },
   actions: {
-    showModal({ commit }) {
-      commit("SHOW_MODAL");
-    },
     hideModal({ commit }) {
       commit("HIDE_MODAL");
+    },
+    updateUser({ commit }, user) {
+      return new Promise((resolve, reject) => {
+        try {
+          commit("UPDATE_CURR_USER", user);
+          resolve(user);
+        } catch (e) {
+          reject(e);
+        }
+      });
     },
   },
 });
