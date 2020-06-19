@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import RegisterModal from "../components/RegisterModal.vue";
+import Inventory from "../views/Inventory.vue";
 const Article = () => import("../views/Article");
 const PostArticle = () => import("../components/PostArticle");
 
@@ -31,6 +32,11 @@ const router = new VueRouter({
       meta: {
         login: true,
       },
+    },
+    {
+      path: "/inventory",
+      name: "Inventory",
+      component: Inventory,
     },
     {
       path: "/article/:post",
