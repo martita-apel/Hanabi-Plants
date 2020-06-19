@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
       <div class="iconos">
         <v-btn text dark class="mr-2" to="/">Inicio</v-btn>
-        <v-btn text dark class="mr-2" to="/about">About</v-btn>
+        <v-btn text dark class="mr-2" to="/article">About</v-btn>
         <v-btn text dark class="mr-2" to="/login">Regístrate</v-btn>
 
         <v-btn icon dark>

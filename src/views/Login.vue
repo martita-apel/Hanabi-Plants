@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center class="registro">
     <div ref="form" :model="usuario" class="my-15">
-      <v-card class="white py-8 px-10" max-width="380">
+      <v-card class="white py-8 px-10 rounded-xl" max-width="380">
         <h1 class="ma-0 py-0 text--secondary text-center titulo">
           Iniciar Sesión
         </h1>
