@@ -6,20 +6,67 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
+
       <div class="iconos">
         <v-btn text dark class="mr-2" to="/">Inicio</v-btn>
-        <v-btn text dark class="mr-2" to="/inventory">Tu inventario</v-btn>
+        <v-btn text dark class="mr-2" to="/inventory">Inventario</v-btn>
         <v-btn text dark class="mr-2" to="/article/1">Blog</v-btn>
         <v-btn text dark class="mr-2" to="/login">Regístrate</v-btn>
-
         <v-btn icon dark>
           <v-icon>mdi-heart</v-icon>
         </v-btn>
         <v-btn icon dark>
-          <v-icon>mdi-magnify</v-icon>
+          <v-icon>mdi-cart</v-icon>
         </v-btn>
-        <v-app-bar-nav-icon dark></v-app-bar-nav-icon>
       </div>
+
+      <v-menu left dark offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            id="burger"
+            class="mt-5 mr-1"
+            dark
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item @click="menu" id="block" class="text-center my-2">
+            <v-list-item-title>
+              <v-btn text dark class="mr-2 my-1" to="/">Inicio</v-btn>
+            </v-list-item-title>
+
+            <v-list-item-title>
+              <v-btn text dark class="mr-2 my-1" to="/inventory"
+                >Inventario</v-btn
+              >
+            </v-list-item-title>
+
+            <v-list-item-title>
+              <v-btn text dark class="mr-2 my-1" to="/article/1">Blog</v-btn>
+            </v-list-item-title>
+
+            <v-list-item-title>
+              <v-btn text dark class="mr-2" to="/login">Regístrate</v-btn>
+            </v-list-item-title>
+
+            <v-list-item-title>
+              <v-btn icon dark class="mr-2 my-1">
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+            </v-list-item-title>
+
+            <v-list-item-title>
+              <v-btn icon dark class="mr-2 my-1">
+                <v-icon>mdi-cart</v-icon>
+              </v-btn>
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-toolbar>
   </div>
 </template>
@@ -29,6 +76,7 @@ export default {
   name: "Navbar",
   components: {},
   data: () => ({}),
+  methods: {},
 };
 </script>
 
@@ -45,5 +93,22 @@ export default {
 }
 .iconos {
   padding-top: 20px !important;
+}
+#burger {
+  display: none;
+}
+#block {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  #burger {
+    display: block;
+  }
+  #block {
+    display: block;
+  }
+  .iconos {
+    display: none;
+  }
 }
 </style>

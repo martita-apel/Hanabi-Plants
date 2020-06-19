@@ -5,6 +5,18 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    plants: [],
+    plant: {
+      id: null,
+      data: {
+        name: "",
+        category: "",
+        description: "",
+        image: "",
+        price: 0,
+        stock: 0,
+      },
+    },
     showModal: false,
   },
   mutations: {
