@@ -11,6 +11,7 @@
         <img class="post_image" src="../assets/post-1.png" alt="" />
       </v-col>
     </v-row>
+
     <div class="post_cuerpo">
       <img class="post_iconos" src="../assets/iconos-post.png" alt="iconos" />
       <h3>
@@ -32,12 +33,13 @@
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class="pl-1 mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">1</v-text>
+              <v-card-text class="card_title overline">1</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "La ausencia de luz es una de las razones más habituales por las
+              que una planta de interior te mostrará su
+              <i>peor cara</i>."
             </v-card-text>
 
             <v-btn
@@ -53,12 +55,12 @@
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">2</v-text>
+              <v-card-text class="card_title overline">2</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "El exceso de agua en el riego y la falta de filtración son la
+              mayor causa de mortalidad en las plantas."
             </v-card-text>
 
             <v-btn
@@ -74,12 +76,12 @@
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">3</v-text>
+              <v-card-text class="card_title overline">3</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "Los cambios bruscos de temperatura o las corrientes de aire son
+              un problema habitual para la pérdida de sus hojas."
             </v-card-text>
 
             <v-btn
@@ -93,16 +95,16 @@
         </v-col>
       </v-row>
 
-      <v-row cols="12" class="ma-4">
+      <v-row cols="12" class="mx-4 mb-8">
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
-            <v-btn small color="white" class="pl-1 mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">4</v-text>
+            <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
+              <v-card-text class="card_title overline">4</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "El trasplante es clave para el crecimiento de la planta, no es
+              bueno que las raíces se encuentren apretadas."
             </v-card-text>
 
             <v-btn
@@ -117,13 +119,13 @@
 
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
-            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">5</v-text>
+            <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
+              <v-card-text class="card_title overline">5</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "Durante el período de crecimiento de la planta, es necesario
+              abonarla para que no le falten nutrientes."
             </v-card-text>
 
             <v-btn
@@ -138,13 +140,13 @@
 
         <v-col sm="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
-            <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
-              <v-text class="card_title overline">6</v-text>
+            <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
+              <v-card-text class="card_title overline">6</v-card-text>
             </v-btn>
 
             <v-card-text class="headline font-weight-bold">
-              "Turns out semicolon-less style is easier and safer in TS because
-              most gotcha edge cases are type invalid as well."
+              "Las hojas con puntas secas es el síntoma más habitual, pero
+              puedes tratar esto pulverizando con agua sus hojas."
             </v-card-text>
 
             <v-btn
@@ -157,7 +159,87 @@
           </v-card>
         </v-col>
       </v-row>
+
+      <v-divider class="div my-6 mx-auto"></v-divider>
     </div>
+
+    <h4 class="proximo_articulo">PRÓXIMOS ARTÍCULOS</h4>
+    <v-row cols="12" class="mx-8 mb-12">
+      <v-col sm="4">
+        <v-card class="mx-auto" max-width="400">
+          <v-img
+            class="white--text align-end"
+            height="200px"
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          >
+            <v-card-title>Top 10 flores primaverales</v-card-title>
+          </v-img>
+
+          <v-card-subtitle class="pb-0">N. 08</v-card-subtitle>
+
+          <v-card-text class="text--primary pb-0">
+            <div>Colección de colores</div>
+            <div>Desde Chiloé al Valle de Elqui</div>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn class="ml-auto" color="orange" text>
+              Explorar
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+
+      <v-col sm="4">
+        <v-card class="mx-auto" max-width="400">
+          <v-img
+            class="white--text align-end"
+            height="200px"
+            src="https://images.unsplash.com/photo-1505159042738-73dbae90178f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          >
+            <v-card-title>Suculentas y su secreto</v-card-title>
+          </v-img>
+
+          <v-card-subtitle class="pb-0">N. 09</v-card-subtitle>
+
+          <v-card-text class="text--primary pb-0">
+            <div>Equilibrio de energías</div>
+            <div>¿Cómo transmitirlas al ambiente?</div>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn class="ml-auto" color="orange" text>
+              Explorar
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+
+      <v-col sm="4">
+        <v-card class="mx-auto" max-width="400">
+          <v-img
+            class="white--text align-end"
+            height="200px"
+            src="https://images.unsplash.com/uploads/1411901100260f56b39b9/ab70b250?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          >
+            <v-card-title>Invernaderos</v-card-title>
+          </v-img>
+
+          <v-card-subtitle class="pb-0">N. 10</v-card-subtitle>
+
+          <v-card-text class="text--primary pb-0">
+            <div>Colección de colores</div>
+            <div>Desde Chiloé al Valle de Elqui</div>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn class="ml-auto" color="orange" text>
+              Explorar
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -198,5 +280,14 @@ p {
 }
 .card_boton {
   font-family: "Roboto";
+}
+.proximo_articulo {
+  font-family: "Roboto";
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  color: grey;
 }
 </style>

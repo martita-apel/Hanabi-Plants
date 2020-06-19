@@ -2,9 +2,9 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
+import RegisterModal from "../components/RegisterModal.vue";
 const Article = () => import("../views/Article");
 const PostArticle = () => import("../components/PostArticle");
-const RegisterModal = () => import("../components/RegisterModal");
 
 /* import firebase from "firebase";
  */
@@ -25,6 +25,14 @@ const router = new VueRouter({
       component: Login,
     },
     {
+      path: "/register",
+      name: "Register",
+      component: RegisterModal,
+      meta: {
+        login: true,
+      },
+    },
+    {
       path: "/article/:post",
       name: "Article",
       component: Article,
@@ -37,12 +45,9 @@ const router = new VueRouter({
       ],
     },
     {
-      path: "/register",
-      name: "Register",
-      component: RegisterModal,
-      meta: {
-        login: true,
-      },
+      path: "*",
+      name: "NotFound",
+      component: () => import("../views/NotFound.vue"),
     },
   ],
 });
