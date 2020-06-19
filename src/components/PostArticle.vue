@@ -228,8 +228,8 @@
           <v-card-subtitle class="pb-0">N. 10</v-card-subtitle>
 
           <v-card-text class="text--primary pb-0">
-            <div>Colección de colores</div>
-            <div>Desde Chiloé al Valle de Elqui</div>
+            <div>Consejos para cultivar</div>
+            <div>Las ventajas para tus cultivos</div>
           </v-card-text>
 
           <v-card-actions>
