@@ -1,21 +1,30 @@
 <template>
-  <div class="article">
-    <img class="article_image" src="../assets/article.jpg" alt="Article" />
-    <div class="article_cuerpo">
-      <h1>
-        Nuestras <br />
-        Plantas de Interior
-      </h1>
-      <h2><i>¿Cómo cuidarlas?</i></h2>
-      <v-divider class="my-4" color="white"></v-divider>
-      <p class="article_parrafo">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-        laudantium consectetur ut obcaecati. Eos eius alias expedita, architecto
-        autem iste et? Quod rerum similique facere dolor, non voluptate culpa
-        inventore. Quod rerum similique facere dolor, non voluptate culpa
-        inventore.
-      </p>
-      <v-btn class="my-4" outlined color="white"><i>Leer más</i></v-btn>
+  <div>
+    <div class="article">
+      <img class="article_image" src="../assets/article.jpg" alt="Article" />
+      <div class="article_cuerpo">
+        <h1>
+          Nuestras <br />
+          Plantas de Interior
+        </h1>
+        <h2><i>¿Cómo cuidarlas?</i></h2>
+        <v-divider class="my-4" color="white"></v-divider>
+        <p class="article_parrafo">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          laudantium consectetur ut obcaecati. Eos eius alias expedita,
+          architecto autem iste et? Quod rerum similique facere dolor, non
+          voluptate culpa inventore. Quod rerum similique facere dolor, non
+          voluptate culpa inventore.
+        </p>
+        <router-link :to="{ name: 'PostArticle' }" class="leer_mas"
+          ><v-btn class="my-4" outlined color="white"
+            ><i>Leer más</i></v-btn
+          ></router-link
+        >
+      </div>
+    </div>
+    <div class="article_post">
+      <router-view />
     </div>
   </div>
 </template>
@@ -23,6 +32,7 @@
 <script>
 export default {
   name: "Article",
+
   data() {
     return {};
   },
@@ -54,5 +64,12 @@ h2 {
 }
 .article_parrafo {
   font-size: 1.1rem;
+}
+.leer_mas {
+  text-decoration: none;
+}
+.article_post {
+  max-width: 100%;
+  display: inline-flex;
 }
 </style>

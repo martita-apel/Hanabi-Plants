@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 const Article = () => import("../views/Article");
+const PostArticle = () => import("../components/PostArticle");
 const RegisterModal = () => import("../components/RegisterModal");
 
 /* import firebase from "firebase";
@@ -24,9 +25,16 @@ const router = new VueRouter({
       component: Login,
     },
     {
-      path: "/article",
+      path: "/article/:post",
       name: "Article",
       component: Article,
+      children: [
+        {
+          path: "post",
+          name: "PostArticle",
+          component: PostArticle,
+        },
+      ],
     },
     {
       path: "/register",
