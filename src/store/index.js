@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -24,14 +25,11 @@ export default new Vuex.Store({
     UPDATE_CURR_USER(state, user) {
       state.currentUser = user;
     },
-    HIDE_MODAL(state) {
-      state.showModal = false;
+    GET_PLANTS(state, plants) {
+      state.plants = plants;
     },
   },
   actions: {
-    hideModal({ commit }) {
-      commit("HIDE_MODAL");
-    },
     updateUser({ commit }, user) {
       return new Promise((resolve, reject) => {
         try {
@@ -41,6 +39,22 @@ export default new Vuex.Store({
           reject(e);
         }
       });
+    },
+    getPlants({ commit }) {
+      /*       commit("LOADING");
+       */ axios
+        .get(
+          "https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plants"
+        )
+        .then((response) => {
+          commit("GET_PLANTS", response.data);
+          /*           commit("RESET_FORM");
+           */
+        })
+        .finally(() => {
+          /*           commit("STOP_LOADING");
+           */
+        });
     },
   },
 });

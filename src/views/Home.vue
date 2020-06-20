@@ -24,24 +24,26 @@
         large
         outlined
         rounded
-        v-bind="attrs"
-        v-on="on"
         color="white"
         @click="noRegister"
         >Registra tu planta</v-btn
       >
     </div>
+    <ListPlants id="lista_plantas" />
   </div>
 </template>
 
 <script>
 import RegisterModal from "@/components/RegisterModal.vue";
+import ListPlants from "@/components/ListPlants.vue";
+
 import { mapState } from "vuex";
 
 export default {
   name: "Home",
   components: {
     RegisterModal,
+    ListPlants,
   },
   data() {
     return {};
@@ -85,5 +87,8 @@ export default {
   background-size: cover;
   min-width: 100%;
   min-height: 670px;
+}
+#lista_plantas {
+  margin: 40px;
 }
 </style>
