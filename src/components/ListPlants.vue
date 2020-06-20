@@ -48,16 +48,21 @@
           >
 
           <v-spacer></v-spacer>
-
-          <v-btn icon color="red darken-1">
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-          <v-btn icon color="teal darken-4">
-            <v-icon>mdi-tag</v-icon>
-          </v-btn>
-          <v-btn icon color="grey darken-4">
-            <v-icon>mdi-share-variant</v-icon>
-          </v-btn>
+          <v-hover v-slot:default="{ hover }">
+            <v-btn icon :color="hover ? 'red darken-1' : 'grey'">
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-hover>
+          <v-hover v-slot:default="{ hover }">
+            <v-btn icon :color="hover ? 'teal darken-3' : 'grey'">
+              <v-icon>mdi-tag</v-icon>
+            </v-btn>
+          </v-hover>
+          <v-hover v-slot:default="{ hover }">
+            <v-btn icon :color="hover ? 'grey darken-4' : 'grey'">
+              <v-icon>mdi-share-variant</v-icon>
+            </v-btn>
+          </v-hover>
         </v-card-actions>
       </v-card>
     </v-row>
