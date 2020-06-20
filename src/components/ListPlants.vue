@@ -20,7 +20,9 @@
                   >mdi-border-color</v-icon
                 ></v-btn
               >
-              <v-btn icon dark><v-icon v-if="hover">mdi-delete</v-icon></v-btn>
+              <v-btn icon dark @click="eliminarCard(p.id)"
+                ><v-icon v-if="hover">mdi-delete</v-icon></v-btn
+              >
             </div>
           </v-img>
         </v-hover>
@@ -82,10 +84,22 @@ export default {
     ...mapState(["plants", "dialog", "currentUser"]),
   },
   methods: {
-    ...mapActions(["getPlants", "findCard", "showModal", "hideModal"]),
+    ...mapActions([
+      "getPlants",
+      "findCard",
+      "showModal",
+      "hideModal",
+      "deleteCard",
+    ]),
     editarCard(id) {
       this.showModal();
       this.findCard(id);
+    },
+    eliminarCard(id) {
+      const confirmar = confirm("¿Estás segura de que quieres eliminarla?");
+      if (confirmar) {
+        this.deleteCard(id);
+      }
     },
   },
   created() {

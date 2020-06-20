@@ -164,5 +164,17 @@ export default new Vuex.Store({
           console.log(error);
         });
     },
+    deleteCard({ dispatch }, id) {
+      axios
+        .delete(
+          `https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plant/${id}`
+        )
+        .then(() => {
+          dispatch("getPlants");
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
   },
 });
