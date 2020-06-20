@@ -33,6 +33,6 @@ h1 {
 .div {
   max-width: 50%;
   margin: auto;
-  margin-bottom: 220px;
+  margin-bottom: 250px;
 }
 </style>

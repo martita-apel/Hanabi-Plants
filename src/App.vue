@@ -1,10 +1,8 @@
 <template>
   <v-app>
-    <v-overlay :value="loading">
-      <Navbar id="navbar" />
-      <v-progress-circular indeterminate size="64"></v-progress-circular>
-      <router-view id="vista"></router-view>
-    </v-overlay>
+    <Navbar id="navbar" />
+
+    <router-view id="vista"></router-view>
     <Footer />
   </v-app>
 </template>
@@ -19,7 +17,10 @@ export default {
     Navbar,
     Footer,
   },
-  data: () => ({}),
+  data() {
+    return {};
+  },
+  computed: {},
 };
 </script>
 

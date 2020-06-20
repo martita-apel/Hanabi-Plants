@@ -29,7 +29,12 @@
         >Registra tu planta</v-btn
       >
     </div>
+
     <ListPlants id="lista_plantas" />
+
+    <v-overlay :value="loading">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </div>
 </template>
 
@@ -49,7 +54,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["currentUser"]),
+    ...mapState(["currentUser", "loading"]),
   },
   methods: {
     noRegister() {
