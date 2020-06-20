@@ -113,7 +113,7 @@
             <v-btn dark color="green darken-1" @click="agregarPlanta">{{
               !!currentPlant.id ? "Actualizar planta" : "Registrar planta"
             }}</v-btn>
-            <v-btn outlined color="green darken-1" @click="hideModal"
+            <v-btn outlined color="green darken-1" @click="cerrarModal"
               >Cerrar</v-btn
             >
           </v-card-actions>
@@ -158,6 +158,7 @@ export default {
       "updatePrice",
       "updateStock",
       "updatePlant",
+      "resetForm",
     ]),
     agregarPlanta() {
       if (!this.currentPlant.id) {
@@ -166,6 +167,10 @@ export default {
         this.updatePlant(this.currentPlant.id);
       }
       this.hideModal();
+    },
+    cerrarModal() {
+      this.hideModal();
+      this.resetForm();
     },
   },
 

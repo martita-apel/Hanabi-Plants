@@ -54,8 +54,16 @@ export default new Vuex.Store({
     UPDATE_STOCK(state, stock) {
       state.currentPlant.data.stock = stock;
     },
-    CURRENT_PLANT(state, plant) {
+    SET_PLANT(state, plant) {
       state.currentPlant = plant;
+    },
+    RESET_FORM(state) {
+      state.currentPlant.id = null;
+      state.currentPlant.data.name = "";
+      state.currentPlant.data.category = "";
+      state.currentPlant.data.description = "";
+      state.currentPlant.data.price = "";
+      state.currentPlant.data.stock = "";
     },
   },
   actions: {
@@ -93,7 +101,10 @@ export default new Vuex.Store({
     updateStock({ commit }, stock) {
       commit("UPDATE_STOCK", stock);
     },
-    getPlants({ commit }) {
+    resetForm({ commit }) {
+      commit("RESET_FORM");
+    },
+    getPlants({ commit, dispatch }) {
       /*       commit("LOADING");
        */ axios
         .get(
@@ -101,8 +112,7 @@ export default new Vuex.Store({
         )
         .then((response) => {
           commit("GET_PLANTS", response.data);
-          /*           commit("RESET_FORM");
-           */
+          dispatch("resetForm");
         })
         .finally(() => {
           /*           commit("STOP_LOADING");
@@ -134,7 +144,7 @@ export default new Vuex.Store({
           `https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plant/${id}`
         )
         .then((response) => {
-          commit("CURRENT_PLANT", response.data);
+          commit("SET_PLANT", response.data);
         })
         .catch(function(error) {
           console.log(error);
