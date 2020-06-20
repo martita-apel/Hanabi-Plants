@@ -1,7 +1,10 @@
 <template>
   <v-app>
-    <Navbar id="navbar" />
-    <router-view id="vista"></router-view>
+    <v-overlay :value="loading">
+      <Navbar id="navbar" />
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+      <router-view id="vista"></router-view>
+    </v-overlay>
     <Footer />
   </v-app>
 </template>

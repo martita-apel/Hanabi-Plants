@@ -22,6 +22,7 @@ export default new Vuex.Store({
     plants: [],
     currentPlant: basePlant(),
     modal: false,
+    loading: false,
   },
   mutations: {
     SHOW_MODAL(state) {
@@ -29,6 +30,12 @@ export default new Vuex.Store({
     },
     HIDE_MODAL(state) {
       state.modal = false;
+    },
+    LOADING(state) {
+      state.loading = true;
+    },
+    STOP_LOADING(state) {
+      state.loading = false;
     },
     UPDATE_CURR_USER(state, user) {
       state.currentUser = user;
@@ -62,6 +69,7 @@ export default new Vuex.Store({
       state.currentPlant.data.name = "";
       state.currentPlant.data.category = "";
       state.currentPlant.data.description = "";
+      state.currentPlant.data.image = "";
       state.currentPlant.data.price = "";
       state.currentPlant.data.stock = "";
     },
@@ -105,8 +113,8 @@ export default new Vuex.Store({
       commit("RESET_FORM");
     },
     getPlants({ commit, dispatch }) {
-      /*       commit("LOADING");
-       */ axios
+      commit("LOADING");
+      axios
         .get(
           "https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plants"
         )
@@ -115,14 +123,14 @@ export default new Vuex.Store({
           dispatch("resetForm");
         })
         .finally(() => {
-          /*           commit("STOP_LOADING");
-           */
+          commit("STOP_LOADING");
         })
         .catch(function(error) {
           console.log(error);
         });
     },
-    addPlant({ dispatch, state }) {
+    addPlant({ dispatch, commit, state }) {
+      commit("LOADING");
       const planta = state.currentPlant.data;
       axios
         .post(
@@ -150,7 +158,8 @@ export default new Vuex.Store({
           console.log(error);
         });
     },
-    updatePlant({ state, dispatch }, id) {
+    updatePlant({ state, dispatch, commit }, id) {
+      commit("LOADING");
       const planta = state.currentPlant.data;
       axios
         .put(
@@ -164,7 +173,8 @@ export default new Vuex.Store({
           console.log(error);
         });
     },
-    deleteCard({ dispatch }, id) {
+    deleteCard({ dispatch, commit }, id) {
+      commit("LOADING");
       axios
         .delete(
           `https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plant/${id}`
