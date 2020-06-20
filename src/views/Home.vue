@@ -89,6 +89,6 @@ export default {
   min-height: 670px;
 }
 #lista_plantas {
-  margin: 40px;
+  margin: 20px;
 }
 </style>
