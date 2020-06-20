@@ -21,9 +21,15 @@ export default new Vuex.Store({
     currentUser: null,
     plants: [],
     currentPlant: basePlant(),
-    showModal: false,
+    modal: false,
   },
   mutations: {
+    SHOW_MODAL(state) {
+      state.modal = true;
+    },
+    HIDE_MODAL(state) {
+      state.modal = false;
+    },
     UPDATE_CURR_USER(state, user) {
       state.currentUser = user;
     },
@@ -48,8 +54,17 @@ export default new Vuex.Store({
     UPDATE_STOCK(state, stock) {
       state.currentPlant.data.stock = stock;
     },
+    CURRENT_PLANT(state, plant) {
+      state.currentPlant = plant;
+    },
   },
   actions: {
+    showModal({ commit }) {
+      commit("SHOW_MODAL");
+    },
+    hideModal({ commit }) {
+      commit("HIDE_MODAL");
+    },
     updateUser({ commit }, user) {
       return new Promise((resolve, reject) => {
         try {
@@ -92,6 +107,9 @@ export default new Vuex.Store({
         .finally(() => {
           /*           commit("STOP_LOADING");
            */
+        })
+        .catch(function(error) {
+          console.log(error);
         });
     },
     addPlant({ dispatch, state }) {
@@ -104,6 +122,32 @@ export default new Vuex.Store({
         )
         .then((response) => {
           console.log(response.data);
+          dispatch("getPlants");
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    findCard({ commit }, id) {
+      axios
+        .get(
+          `https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plant/${id}`
+        )
+        .then((response) => {
+          commit("CURRENT_PLANT", response.data);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    updatePlant({ state, dispatch }, id) {
+      const planta = state.currentPlant.data;
+      axios
+        .put(
+          `https://us-central1-hanabi-plantas.cloudfunctions.net/plants/plant/${id}`,
+          planta
+        )
+        .then(() => {
           dispatch("getPlants");
         })
         .catch(function(error) {

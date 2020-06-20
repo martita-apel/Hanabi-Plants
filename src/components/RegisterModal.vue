@@ -1,7 +1,7 @@
 <template>
   <v-layout id="layout" column justify-center align-center>
     <v-row justify="center">
-      <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-dialog :value="modal" persistent max-width="600px">
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             class="my-10 text-center"
@@ -11,6 +11,7 @@
             v-bind="attrs"
             v-on="on"
             color="white"
+            @click="showModal"
             >Registra tu planta</v-btn
           >
         </template>
@@ -109,10 +110,10 @@
           </v-card-text>
 
           <v-card-actions class="pb-8 ml-7">
-            <v-btn dark color="green darken-1" @click="agregarPlanta"
-              >Registrar planta</v-btn
-            >
-            <v-btn outlined color="green darken-1" @click="dialog = false"
+            <v-btn dark color="green darken-1" @click="agregarPlanta">{{
+              !!currentPlant.id ? "Actualizar planta" : "Registrar planta"
+            }}</v-btn>
+            <v-btn outlined color="green darken-1" @click="hideModal"
               >Cerrar</v-btn
             >
           </v-card-actions>
@@ -140,26 +141,31 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Register",
   data() {
-    return {
-      dialog: false,
-    };
+    return {};
   },
   computed: {
-    ...mapState(["currentUser", "currentPlant"]),
+    ...mapState(["currentUser", "currentPlant", "modal"]),
   },
   methods: {
     ...mapActions([
       "addPlant",
+      "showModal",
+      "hideModal",
       "updateName",
       "updateCategory",
       "updateDescription",
       "updateImage",
       "updatePrice",
       "updateStock",
+      "updatePlant",
     ]),
     agregarPlanta() {
-      this.addPlant();
-      this.dialog = false;
+      if (!this.currentPlant.id) {
+        this.addPlant();
+      } else {
+        this.updatePlant(this.currentPlant.id);
+      }
+      this.hideModal();
     },
   },
 

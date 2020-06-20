@@ -14,8 +14,8 @@
         <v-hover v-slot:default="{ hover }">
           <v-img min-height="200px" max-height="350px" :src="p.data.image">
             <v-spacer></v-spacer>
-            <div class="ma-2 text-right">
-              <v-btn icon dark
+            <div v-show="currentUser" class="ma-2 text-right">
+              <v-btn icon dark @click="editarCard(p.id)"
                 ><v-icon v-if="hover" class="pt-2"
                   >mdi-border-color</v-icon
                 ></v-btn
@@ -79,10 +79,14 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["plants"]),
+    ...mapState(["plants", "dialog", "currentUser"]),
   },
   methods: {
-    ...mapActions(["getPlants"]),
+    ...mapActions(["getPlants", "findCard", "showModal", "hideModal"]),
+    editarCard(id) {
+      this.showModal();
+      this.findCard(id);
+    },
   },
   created() {
     this.getPlants();
