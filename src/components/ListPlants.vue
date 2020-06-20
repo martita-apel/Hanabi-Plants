@@ -7,12 +7,24 @@
         sm="2"
         class="mx-auto my-2"
         min-width="150"
-        max-width="400"
+        max-width="300"
         v-for="p in plants"
         :key="p.id"
       >
-        <v-img min-height="200px" max-height="500px" :src="p.data.image">
-        </v-img>
+        <v-hover v-slot:default="{ hover }">
+          <v-img min-height="200px" max-height="350px" :src="p.data.image">
+            <v-spacer></v-spacer>
+            <div class="ma-2 text-right">
+              <v-btn icon dark
+                ><v-icon v-if="hover" class="pt-2"
+                  >mdi-border-color</v-icon
+                ></v-btn
+              >
+              <v-btn icon dark><v-icon v-if="hover">mdi-delete</v-icon></v-btn>
+            </div>
+          </v-img>
+        </v-hover>
+
         <v-card-title class="card_titulo dark--text text--secondary">{{
           p.data.name
         }}</v-card-title>

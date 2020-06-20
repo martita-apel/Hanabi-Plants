@@ -11,7 +11,6 @@
             v-bind="attrs"
             v-on="on"
             color="white"
-            @click="agregarPlanta"
             >Registra tu planta</v-btn
           >
         </template>
@@ -33,7 +32,10 @@
               <v-row>
                 <v-col cols="12" sm="6" class="py-0">
                   <v-text-field
-                    label="Nombre de tu planta*"
+                    type="text"
+                    placeholder="Nombre de tu planta*"
+                    :value="currentPlant.data.name"
+                    @input="updateName"
                     outlined
                     dense
                     required
@@ -43,17 +45,22 @@
                 <v-col cols="12" sm="6" class="py-0">
                   <v-text-field
                     type="text"
-                    label="Categoría*"
+                    placeholder="Categoría*"
+                    hint="Según su especie, tamaño y/o morfología."
+                    :value="currentPlant.data.category"
+                    @input="updateCategory"
                     outlined
                     dense
                     required
-                    hint="Según su especie, tamaño y/o morfología."
                   ></v-text-field>
                 </v-col>
 
                 <v-col cols="12" class="py-0">
                   <v-text-field
-                    label="Imagen*"
+                    type="text"
+                    placeholder="Imagen*"
+                    :value="currentPlant.data.image"
+                    @input="updateImage"
                     hint="Ingresa la URL"
                     outlined
                     dense
@@ -65,7 +72,9 @@
                   <v-textarea
                     class="pb-0"
                     type="text"
-                    label="Descripción"
+                    placeholder="Descripción"
+                    :value="currentPlant.data.description"
+                    @input="updateDescription"
                     rows="5"
                     outlined
                     dense
@@ -76,8 +85,9 @@
                   <v-col cols="12" sm="10" class="py-0">
                     <v-text-field
                       prepend-inner-icon="mdi-currency-usd"
-                      label="Precio"
-                      type="number"
+                      placeholder="Precio"
+                      :value="currentPlant.data.price"
+                      @input="updatePrice"
                       outlined
                       dense
                     ></v-text-field>
@@ -85,8 +95,9 @@
 
                   <v-col cols="12" sm="8" class="py-0">
                     <v-text-field
-                      label="Stock"
-                      type="number"
+                      placeholder="Stock"
+                      :value="currentPlant.data.sock"
+                      @input="updateStock"
                       outlined
                       dense
                     ></v-text-field>
@@ -109,43 +120,6 @@
       </v-dialog>
     </v-row>
 
-    <v-card-text class="py-0">
-      <!-- <v-text-field
-              placeholder="Código"
-              filled
-              dense
-              type="text"
-              :value="currentToy.data.id"
-              @input="updateId"
-            ></v-text-field>
-
-            <v-text-field
-              placeholder="Nombre"
-              filled
-              dense
-              type="text"
-              :value="currentToy.data.name"
-              @input="updateName"
-            ></v-text-field>
-
-            <v-text-field
-              placeholder="Precio"
-              filled
-              dense
-              prefix="$"
-              :value="currentToy.data.price"
-              @input="updatePrice"
-            ></v-text-field>
-
-            <v-text-field
-              placeholder="Stock"
-              filled
-              dense
-              suffix="unidades"
-              :value="currentToy.data.stock"
-              @input="updateStock"
-            ></v-text-field> -->
-    </v-card-text>
     <!-- <v-card-actions class="añadir">
             <v-spacer></v-spacer>
             <v-btn class="primary boton-add" text @click="ocultarModal"
@@ -161,7 +135,7 @@
 </template>
 
 <script>
-import { mapState, mapActions /*mapMutations */ } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Register",
@@ -171,44 +145,27 @@ export default {
     };
   },
   computed: {
-    ...mapState(["currentUser"]),
+    ...mapState(["currentUser", "currentPlant"]),
   },
   methods: {
-    ...mapActions([]),
-    agregarPlanta() {},
-  },
-  /*methods: {
-    ...mapMutations(["SET_EMPTY_TOY"]),
     ...mapActions([
-      "getToys",
-      "showModal",
-      "hideModal",
-      "updateId",
+      "addPlant",
       "updateName",
+      "updateCategory",
+      "updateDescription",
+      "updateImage",
       "updatePrice",
       "updateStock",
-      "addToy",
-      "updateToy",
     ]),
-    agregarToy() {
-      if (!this.currentToy.id) {
-        this.addToy();
-      } else {
-        this.updateToy(this.currentToy.id);
-      }
-      this.hideModal();
-    },
-    mostrarModal() {
-      this.showModal();
-    },
-    ocultarModal() {
-      this.hideModal();
-      this.getToys();
+    agregarPlanta() {
+      this.addPlant();
+      this.dialog = false;
     },
   },
-  created() {
+
+  /* created() {
     this.getToys();
-  }, */
+  },  */
 };
 </script>
 
