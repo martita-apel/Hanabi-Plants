@@ -10,7 +10,9 @@
       <div class="iconos">
         <v-btn text dark class="mr-1" to="/">Inicio</v-btn>
         <v-btn text dark class="mr-1" to="/inventory">Inventario</v-btn>
-        <v-btn text dark class="mr-1" to="/article/1">Blog</v-btn>
+        <v-btn text dark class="mr-1" id="nav_article" to="/article/1"
+          >Blog</v-btn
+        >
         <v-btn text dark class="mr-1" to="/login" @click="logout">{{
           currentUser ? "Cerrar Sesión" : "Regístrate"
         }}</v-btn>

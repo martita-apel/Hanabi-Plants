@@ -39,7 +39,9 @@
           outlined
         ></v-text-field>
 
-        <v-btn type="submit" color="warning" @click="login">INGRESAR</v-btn>
+        <v-btn id="ingresar_boton" type="submit" color="warning" @click="login"
+          >INGRESAR</v-btn
+        >
       </v-card>
     </div>
   </v-layout>
