@@ -1,16 +1,16 @@
-#Hanabi Plantas
+# Hanabi Plantas
 
 Es una plataforma destinada a descubrir, organizar y compartir todo sobre plantas.
 
-###Motivación
+### Motivación
 
 Conectar a los amantes de las plantas en un sólo espacio y potenciar su comunicación.
 
-###Descripción
+### Descripción
 
 La plataforma se maneja a través de una galería, un buscador y la opción de un inventario personal (iniciar sesión) en donde se pueden armar colecciones. Entre sus principales funcionalidades, cuenta con un canal de compra y venta.
 
-##Instalación local
+## Instalación
 
 Clonar projecto:
 

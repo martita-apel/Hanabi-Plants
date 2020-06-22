@@ -1,11 +1,12 @@
 <template>
   <div class="list_plants">
-    <v-row>
+    <masonry
+      :cols="{ default: 4, 1000: 3, 700: 2, 400: 1 }"
+      :gutter="{ default: '30px', 700: '15px' }"
+    >
       <v-card
         id="card_plant"
-        cols="6"
-        sm="2"
-        class="mx-auto my-2"
+        class="mx-auto my-4"
         min-width="150"
         max-width="300"
         v-for="p in plants"
@@ -67,7 +68,7 @@
           </v-hover>
         </v-card-actions>
       </v-card>
-    </v-row>
+    </masonry>
   </div>
 </template>
 
