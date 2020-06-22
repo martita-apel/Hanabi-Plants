@@ -2,13 +2,13 @@
   <div>
     <v-row cols="12">
       <v-col sm="4" class="pa-0">
-        <img class="post_image" src="../assets/post-2.png" alt="" />
+        <img id="post_img" src="../assets/post-2.png" alt="" />
       </v-col>
       <v-col sm="4" class="pa-0">
-        <img class="post_image" src="../assets/post-3.png" alt="" />
+        <img id="post_img" src="../assets/post-3.png" alt="" />
       </v-col>
       <v-col sm="4" class="pa-0">
-        <img class="post_image" src="../assets/post-1.png" alt="" />
+        <img id="post_img" src="../assets/post-1.png" alt="" />
       </v-col>
     </v-row>
 
@@ -30,7 +30,7 @@
       <v-divider class="div my-6 mx-auto"></v-divider>
 
       <v-row cols="12" class="ma-4">
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class="pl-1 mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">1</v-card-text>
@@ -52,7 +52,7 @@
           </v-card>
         </v-col>
 
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">2</v-card-text>
@@ -73,7 +73,7 @@
           </v-card>
         </v-col>
 
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class=" mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">3</v-card-text>
@@ -93,10 +93,8 @@
             >
           </v-card>
         </v-col>
-      </v-row>
 
-      <v-row cols="12" class="mx-4 mb-8">
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">4</v-card-text>
@@ -117,7 +115,7 @@
           </v-card>
         </v-col>
 
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">5</v-card-text>
@@ -138,7 +136,7 @@
           </v-card>
         </v-col>
 
-        <v-col sm="4">
+        <v-col cols="12" sm="6" md="4">
           <v-card class="mx-auto" color="#D3CABE" dark max-width="400">
             <v-btn small color="white" class="mt-6 mx-auto" outlined fab>
               <v-card-text class="card_title overline">6</v-card-text>
@@ -250,7 +248,7 @@ export default {
 </script>
 
 <style scoped>
-.post_image {
+#post_img {
   max-width: 100%;
 }
 .post_cuerpo {

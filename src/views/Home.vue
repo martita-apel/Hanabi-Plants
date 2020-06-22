@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div id="img" class="text-center">
+    <div id="home_img" class="text-center">
       <h1 class="home_titulo">
         Temporada de <br />
         Plantas de Interior
@@ -76,6 +76,7 @@ export default {
 }
 .home_parrafo {
   font-family: "PT Serif", serif;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 30px;
   text-align: center;
@@ -87,7 +88,7 @@ export default {
   font-weight: 700;
   color: white;
 }
-#img {
+#home_img {
   background-image: url("../assets/plantas.png");
   background-size: cover;
   min-width: 100%;
@@ -95,5 +96,36 @@ export default {
 }
 #lista_plantas {
   margin: 20px;
+}
+@media only screen and (max-width: 900px) {
+  .home_titulo {
+    font-size: 4rem;
+    line-height: 70px;
+    padding: 140px 0 20px 0;
+  }
+}
+@media only screen and (max-width: 756px) {
+  .home_titulo {
+    font-size: 3rem;
+    line-height: 50px;
+    padding: 140px 0 20px 0;
+  }
+  .home_parrafo {
+    font-size: 1.2rem;
+    line-height: 25px;
+  }
+  #home_img {
+    min-height: 600px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .home_titulo {
+    font-size: 2.3rem;
+    line-height: 40px;
+    padding: 120px 0 20px 0;
+  }
+  #home_img {
+    min-height: 550px;
+  }
 }
 </style>

@@ -16,16 +16,16 @@
           voluptate culpa inventore. Quod rerum similique facere dolor, non
           voluptate culpa inventore.
         </p>
-        <router-link :to="{ name: 'PostArticle' }" class="leer_mas"
+        <router-link :to="{ name: 'PostArticle' }" id="leer_mas"
           ><v-btn class="my-4" outlined color="white"
             ><i>Leer más</i></v-btn
           ></router-link
         >
       </div>
     </div>
-    <div class="article_post">
+    <v-main class="article_post">
       <router-view />
-    </div>
+    </v-main>
   </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .article {
   background-color: #cdbfb4;
   display: flex;
@@ -65,11 +65,51 @@ h2 {
 .article_parrafo {
   font-size: 1.1rem;
 }
-.leer_mas {
+#leer_mas {
   text-decoration: none;
 }
 .article_post {
   max-width: 100%;
   display: inline-flex;
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 3.8rem;
+    line-height: 60px;
+    margin: 100px 0 0 0px;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (max-width: 756px) {
+  h1 {
+    font-size: 2.8rem;
+    line-height: 45px;
+    margin: 80px 0 0 0px;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .article_parrafo {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .article {
+    display: block;
+  }
+  .article_image {
+    min-width: 100%;
+    object-fit: cover;
+    height: 450px;
+  }
+  h1 {
+    margin: 30px 0 0 0px;
+  }
+  .article_parrafo {
+    font-size: 1rem;
+  }
 }
 </style>

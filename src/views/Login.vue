@@ -1,7 +1,11 @@
 <template>
   <v-layout column justify-center align-center class="registro">
     <div ref="form" :model="usuario" class="my-15">
-      <v-card class="white py-8 px-10 rounded-xl" max-width="380">
+      <v-card
+        id="login_card"
+        class="white py-8 px-10 rounded-xl"
+        max-width="380"
+      >
         <h1 class="ma-0 py-0 text--secondary text-center titulo">
           Iniciar Sesión
         </h1>
@@ -88,11 +92,21 @@ export default {
 }
 .titulo {
   font-family: "PT Serif", serif !important;
+  font-size: 40px;
   padding-bottom: 8px;
   margin: auto 0;
 }
 .bajada {
   font-family: "PT Serif", serif;
   font-weight: 400;
+}
+
+@media only screen and (max-width: 450px) {
+  #login_card {
+    margin: 10px 20px;
+  }
+  .titulo {
+    font-size: 30px;
+  }
 }
 </style>
