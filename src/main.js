@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import firebaseConfig from "@/firebase";
 import firebase from "firebase";
@@ -10,7 +11,7 @@ import VueMasonry from "vue-masonry-css";
 
 firebase.initializeApp(firebaseConfig);
 
-Vue.use(vuetify);
+Vue.use(Vuetify);
 Vue.use(VueMasonry);
 
 Vue.config.productionTip = false;
@@ -22,6 +23,7 @@ firebase.auth().onAuthStateChanged(() => {
     app = new Vue({
       router,
       store,
+      Vuetify,
       vuetify,
       VueMasonry,
       render: (h) => h(App),

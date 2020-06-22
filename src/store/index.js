@@ -70,8 +70,8 @@ export default new Vuex.Store({
       state.currentPlant.data.category = "";
       state.currentPlant.data.description = "";
       state.currentPlant.data.image = "";
-      state.currentPlant.data.price = "";
-      state.currentPlant.data.stock = "";
+      state.currentPlant.data.price = 0;
+      state.currentPlant.data.stock = 0;
     },
   },
   actions: {

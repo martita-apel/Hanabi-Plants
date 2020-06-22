@@ -2,7 +2,7 @@
   <div class="list_plants">
     <masonry
       :cols="{ default: 4, 1000: 3, 700: 2, 400: 1 }"
-      :gutter="{ default: '30px', 700: '15px' }"
+      :gutter="{ default: '15px', 700: '10px' }"
     >
       <v-card
         id="card_plant"

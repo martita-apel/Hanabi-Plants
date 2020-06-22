@@ -97,7 +97,7 @@
                   <v-col cols="12" sm="8" class="py-0">
                     <v-text-field
                       placeholder="Stock"
-                      :value="currentPlant.data.sock"
+                      :value="currentPlant.data.stock"
                       @input="updateStock"
                       outlined
                       dense
