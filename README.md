@@ -16,7 +16,7 @@ La plataforma se maneja a través de una galería, un buscador y la opción de u
 
 - Vue, Vuex y Vue Router.
 
-* Firebase - Firestore Functiones.
+* Firebase - Firestore Functions.
 
 * CSS Framework - Vuetify.
 
