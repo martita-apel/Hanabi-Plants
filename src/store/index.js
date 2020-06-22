@@ -140,7 +140,6 @@ export default new Vuex.Store({
         )
         .then((response) => {
           console.log(response.data);
-          alert("¡Tu planta se ha añadido exitosamente!");
           dispatch("getPlants");
         })
         .catch(function(error) {

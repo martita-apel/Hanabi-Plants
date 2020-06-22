@@ -120,18 +120,6 @@
         </v-card>
       </v-dialog>
     </v-row>
-
-    <!-- <v-card-actions class="añadir">
-            <v-spacer></v-spacer>
-            <v-btn class="primary boton-add" text @click="ocultarModal"
-              >CERRAR</v-btn
-            >
-            <v-btn class="warning boton-add" text @click="agregarToy">{{
-              !!currentToy.id ? "Actualizar" : "Añadir"
-            }}</v-btn>
-                        <v-btn class="green boton-add" text v-if="edit" @click="actualizar(id)">ACTUALIZAR</v-btn>
-           
-          </v-card-actions> -->
   </v-layout>
 </template>
 
@@ -163,8 +151,10 @@ export default {
     agregarPlanta() {
       if (!this.currentPlant.id) {
         this.addPlant();
+        alert("¡Tu planta se ha añadido exitosamente!");
       } else {
         this.updatePlant(this.currentPlant.id);
+        alert("¡Se han actualizado los datos!");
       }
       this.hideModal();
     },
@@ -173,10 +163,6 @@ export default {
       this.resetForm();
     },
   },
-
-  /* created() {
-    this.getToys();
-  },  */
 };
 </script>
 

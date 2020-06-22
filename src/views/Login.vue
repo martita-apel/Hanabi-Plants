@@ -50,6 +50,7 @@
 <script>
 import { mapActions } from "vuex";
 import firebase from "firebase";
+import swal from "sweetalert";
 
 export default {
   name: "Login",
@@ -74,7 +75,7 @@ export default {
           let usuario = this.usuario.email;
           this.updateUser(usuario);
           this.$router.push("/");
-          alert("Te has registrado con éxito!");
+          swal("Te has registrado con éxito!");
         })
         .catch(() => {
           this.updateUser(null);
