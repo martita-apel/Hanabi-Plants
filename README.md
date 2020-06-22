@@ -1,4 +1,4 @@
-# Hanabi Plantas
+# Hanabi Plants
 
 Es una plataforma destinada a descubrir, organizar y compartir todo sobre plantas.
 
@@ -31,20 +31,4 @@ Ejecutar en modo desarrollo:
 npm run serve
 ```
 
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your unit tests
-
-```
-npm run test:unit
-```
-
-### Run your end-to-end tests
-
-```
-npm run test:e2e
-```
+#### Visitar: [Hanabi Plants](https://hanabi-plantas.web.app/)
