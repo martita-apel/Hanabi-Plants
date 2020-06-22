@@ -12,6 +12,14 @@ La plataforma se maneja a través de una galería, un buscador y la opción de u
 
 ## Instalación
 
+### Pre-requisitos:
+
+- Vue, Vuex y Vue Router.
+
+* Firebase - Firestore Functiones.
+
+* CSS Framework - Vuetify.
+
 Clonar projecto:
 
 ```
