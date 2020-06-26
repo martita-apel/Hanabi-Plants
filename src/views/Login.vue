@@ -1,19 +1,14 @@
 <template>
   <v-layout column justify-center align-center class="registro">
     <div ref="form" :model="usuario" class="my-15">
-      <v-card
-        id="login_card"
-        class="white py-8 px-10 rounded-xl"
-        max-width="380"
-      >
-        <h1 class="ma-0 py-0 text--secondary text-center titulo">
-          Iniciar Sesión
-        </h1>
+      <v-card id="login_card" class="white py-8 px-10 rounded-xl" max-width="380">
+        <h1 class="ma-0 py-0 text--secondary text-center titulo">Iniciar Sesión</h1>
         <v-divider class="my-3"></v-divider>
         <h4 class="text--secondary text-center bajada">
           Para que puedas registrar una nueva planta en
-          <b><i>Hanabi Plantas</i></b
-          >, es necesario que accedas con tu cuenta.
+          <b>
+            <i>Hanabi Plantas</i>
+          </b>, es necesario que accedas con tu cuenta.
         </h4>
         <br />
         <v-text-field
@@ -39,9 +34,7 @@
           outlined
         ></v-text-field>
 
-        <v-btn id="ingresar_boton" type="submit" color="warning" @click="login"
-          >INGRESAR</v-btn
-        >
+        <v-btn id="ingresar_boton" type="submit" color="warning" @click="login">INGRESAR</v-btn>
       </v-card>
     </div>
   </v-layout>
@@ -59,8 +52,8 @@ export default {
       showPassword: false,
       usuario: {
         email: "",
-        password: "",
-      },
+        password: ""
+      }
     };
   },
   methods: {
@@ -70,7 +63,7 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.usuario.email, this.usuario.password)
-        .then((user) => {
+        .then(user => {
           console.log(user);
           let usuario = this.usuario.email;
           this.updateUser(usuario);
@@ -81,8 +74,8 @@ export default {
           this.updateUser(null);
           alert("¡Error al iniciar sesión!");
         });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -95,7 +88,7 @@ export default {
 }
 .titulo {
   font-family: "PT Serif", serif !important;
-  font-size: 40px;
+  font-size: 35px;
   padding-bottom: 8px;
   margin: auto 0;
 }

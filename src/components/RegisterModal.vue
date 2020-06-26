@@ -12,18 +12,13 @@
             v-on="on"
             color="white"
             @click="showModal"
-            >Registra tu planta</v-btn
-          >
+          >Registra tu planta</v-btn>
         </template>
 
         <v-card class="rounded-xl">
           <v-card-title class="d-block">
-            <h6 id="header" class="text-center my-3">
-              INVENTARIO
-            </h6>
-            <h1 class="text--secondary text-center titulo">
-              Hanabi Plantas
-            </h1>
+            <h6 id="header" class="text-center mt-3 mb-0">INVENTARIO</h6>
+            <h1 class="text--secondary text-center pb-0 titulo">Hanabi Plantas</h1>
           </v-card-title>
 
           <v-divider class="my-2 mx-10"></v-divider>
@@ -110,12 +105,12 @@
           </v-card-text>
 
           <v-card-actions class="pb-8 ml-7">
-            <v-btn dark color="green darken-1" @click="agregarPlanta">{{
+            <v-btn dark color="green darken-1" @click="agregarPlanta">
+              {{
               !!currentPlant.id ? "Actualizar planta" : "Registrar planta"
-            }}</v-btn>
-            <v-btn outlined color="green darken-1" @click="cerrarModal"
-              >Cerrar</v-btn
-            >
+              }}
+            </v-btn>
+            <v-btn outlined color="green darken-1" @click="cerrarModal">Cerrar</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -132,7 +127,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["currentUser", "currentPlant", "modal"]),
+    ...mapState(["currentUser", "currentPlant", "modal"])
   },
   methods: {
     ...mapActions([
@@ -146,7 +141,7 @@ export default {
       "updatePrice",
       "updateStock",
       "updatePlant",
-      "resetForm",
+      "resetForm"
     ]),
     agregarPlanta() {
       if (!this.currentPlant.id) {
@@ -161,8 +156,8 @@ export default {
     cerrarModal() {
       this.hideModal();
       this.resetForm();
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -181,6 +176,7 @@ export default {
 }
 .titulo {
   font-family: "PT Serif", serif !important;
+  font-size: 35px;
   margin: auto 0;
   padding-bottom: 8px;
 }
