@@ -1,5 +1,15 @@
 # Hanabi Plants
 
+![Inicio](inicio.png)
+![Inventario](inventario.png)
+![Inventario](inventario-2.png)
+
+![Registro](registro.png)
+
+![Articulo](articulo.png)
+
+![Login](login.png)
+
 Es una plataforma destinada a descubrir, organizar y compartir todo sobre plantas.
 
 ### Motivación
